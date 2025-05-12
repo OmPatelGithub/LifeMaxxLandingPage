@@ -3,37 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>LifeMaxx - #1 AI Life Assistant</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .center-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
         }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            background: linear-gradient(90deg, #f7baff 0%, #a3cfff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        h1 {
-            color: #333;
+        .tagline {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            color: #fff;
+            font-weight: 500;
         }
-        p {
-            color: #666;
+        .store-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .store-buttons a img {
+            height: 50px;
+            transition: transform 0.2s;
+        }
+        .store-buttons a img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            width: 100%;
+            background: #1a1a1a;
+            padding: 1.5rem 0 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .social-links a {
+            color: #aaa;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2rem;
+            }
+            .tagline {
+                font-size: 1rem;
+            }
+            .store-buttons a img {
+                height: 40px;
+            }
+            .footer-links {
+                gap: 1rem;
+            }
+            .social-links {
+                gap: 1rem;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, World!</h1>
-        <p>Welcome to my simple landing page.</p>
-        <p>This is a basic Hello World example.</p>
+    <div class="center-content">
+        <div class="logo">LifeMaxx</div>
+        <div class="tagline">#1 AI Life Assistant</div>
+        <div class="store-buttons">
+            <a href="#" aria-label="Download on the App Store">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+            <a href="#" aria-label="Get it on Google Play">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+            </a>
+        </div>
     </div>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Support</a>
+            <a href="#">Press</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
