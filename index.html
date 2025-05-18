@@ -321,82 +321,79 @@
         </header>
         
         <div class="form-container">
-            <form id="email-form" onsubmit="handleSubmit(event)">
+            <form id="email-form" class="form">
+                <input type="hidden" name="access_key" value="c534975c-b83f-4196-b402-99a6d8864138">
+                <input type="hidden" name="subject" value="New LifeMaxx Waitlist Signup">
+                <input type="hidden" name="from_name" value="LifeMaxx Website">
+              
                 <div class="form-group">
-                    <label for="email" class="form-label">Join our waitlist</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        class="form-input" 
-                        placeholder="Enter your email address"
-                        required
-                        aria-label="Email address"
-                    >
-                    <div class="form-error">Please enter a valid email address</div>
+                  <label for="email" class="form-label">Join our waitlist</label>
+                  <input 
+                      type="email" 
+                      name="email" 
+                      id="email" 
+                      class="form-input" 
+                      placeholder="Enter your email address"
+                      required
+                  >
+                  <div class="form-error">Please enter a valid email address</div>
                 </div>
+              
                 <button type="submit" class="form-submit">
-                    <span>Get Early Access</span>
-                    <i class="fas fa-arrow-right"></i>
+                  <span>Get Early Access</span>
+                  <i class="fas fa-arrow-right"></i>
                 </button>
-            </form>
-            <div id="success-message" class="form-success">
+              </form>
+              
+              <div id="success-message" class="form-success" style="display: none;">
                 Thank you! We'll notify you when LifeMaxx is available.
-            </div>
+              </div>
+            
+            
+        
         </div>
     </div>
     
     <footer>
         <div class="footer-links">
-            <a href="#">Support</a>
-            <a href="#">Press</a>
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUWDUHCHQRo98OE_fa0EQP0ea5xPYm5A_kwV9w_Rksa1CC4A/viewform?usp=header" target="_blank">Support</a>
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Terms</a>
+            <a href="https://sites.google.com/view/lifemaxxprivacypolicy/home" target="_blank">Privacy</a>
         </div>
         <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/lifemaxxapp" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/lifemaxx.app/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@lifemaxapp" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
     </footer>
-
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const emailInput = document.getElementById('email');
-            const successMessage = document.getElementById('success-message');
-            const emailForm = document.getElementById('email-form');
-            
-            // Simple email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(emailInput.value)) {
-                emailInput.classList.add('error');
-                return;
-            }
-            
-            // Remove error class if previously set
-            emailInput.classList.remove('error');
-            
-            // Here you would typically send the email to your server
-            // For now, we'll just show the success message
-            emailForm.style.display = 'none';
-            successMessage.style.display = 'block';
-            
-            // You could add analytics tracking here
-            if (typeof gtag === 'function') {
-                gtag('event', 'signup', {
-                    'event_category': 'engagement',
-                    'event_label': 'waitlist'
-                });
-            }
-        }
+        document.getElementById('email-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const form = e.target;
+          const formData = new FormData(form);
+          const successMessage = document.getElementById('success-message');
         
-        // Remove error class on input
-        document.getElementById('email').addEventListener('input', function() {
-            this.classList.remove('error');
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+          });
+        
+          if (res.ok) {
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+        
+            // Optional: analytics
+            if (typeof gtag === 'function') {
+              gtag('event', 'signup', {
+                event_category: 'engagement',
+                event_label: 'waitlist'
+              });
+            }
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
         });
-    </script>
+        </script>
 </body>
 </html>
