@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             box-sizing: border-box;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        
+
         body {
             background-color: #000;
             color: #fff;
@@ -23,7 +24,7 @@
             position: relative;
             overflow-x: hidden;
         }
-        
+
         body::before {
             content: "";
             position: absolute;
@@ -38,11 +39,11 @@
             pointer-events: none;
             opacity: 0.35;
         }
-        
+
         body::after {
             display: none;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -55,20 +56,20 @@
             align-items: center;
             text-align: center;
         }
-        
+
         header {
             padding: 0;
             width: 100%;
             margin-bottom: 20px;
         }
-        
+
         .logo {
             max-width: 170px;
             margin-bottom: 30px;
             border-radius: 25px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.057);
         }
-        
+
         h1 {
             font-size: 4.5rem;
             font-weight: 700;
@@ -80,7 +81,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-        
+
         h1::after {
             content: "";
             display: block;
@@ -90,7 +91,7 @@
             margin: -7px auto 0;
             border-radius: 2px;
         }
-        
+
         .tagline {
             font-size: 1.5rem;
             color: #f8f9fa;
@@ -98,7 +99,7 @@
             font-weight: 300;
             margin-top: 10px;
         }
-        
+
         .app-buttons {
             display: flex;
             flex-direction: column;
@@ -106,22 +107,22 @@
             gap: 20px;
             margin-top: 0;
         }
-        
+
         .app-button {
             display: inline-block;
             transition: transform 0.3s ease;
             border: none;
             padding: 0;
         }
-        
+
         .app-button:hover {
             transform: scale(1.05);
         }
-        
+
         .app-button img {
             max-width: 200px;
         }
-        
+
         footer {
             background-color: #000;
             color: #fff;
@@ -130,14 +131,14 @@
             width: 100%;
             margin-top: auto;
         }
-        
+
         .footer-links {
             margin: 20px 0;
             display: flex;
             justify-content: center;
             gap: 30px;
         }
-        
+
         .footer-links a {
             color: #fff;
             margin: 0 15px;
@@ -145,174 +146,79 @@
             transition: color 0.3s ease;
             font-size: 0.9rem;
         }
-        
+
         .footer-links a:hover {
             color: #f8f9fa;
             text-decoration: underline;
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 25px;
             margin: 30px 0;
         }
-        
+
         .social-links a {
             color: #fff;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
-        
+
         .social-links a:hover {
             color: #f8f9fa;
         }
 
-        /* Shadcn-inspired form styles */
-        .form-container {
-            width: 100%;
-            max-width: 450px;
-            margin: 30px auto;
-        }
 
-        .form-label {
-            display: block;
-            color: #f8f9fa;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-align: left;
-        }
 
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            outline: none;
-        }
-
-        .form-input:focus {
-            border-color: rgba(255, 126, 169, 0.5);
-            box-shadow: 0 0 0 2px rgba(255, 126, 169, 0.25);
-        }
-
-        .form-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 12px 20px;
-            border-radius: 8px;
-            background: linear-gradient(90deg, #ff7eaa, #ba68c8);
-            color: white;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .form-submit:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .form-submit:active {
-            transform: translateY(1px);
-        }
-
-        .form-error {
-            color: #ff7eaa;
-            font-size: 0.8rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .form-input.error {
-            border-color: #ff7eaa;
-        }
-
-        .form-input.error + .form-error {
-            display: block;
-        }
-
-        .form-success {
-            color: #4ade80;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            background-color: rgba(74, 222, 128, 0.1);
-            margin-top: 10px;
-            display: none;
-        }
-        
         @media (max-width: 768px) {
             h1 {
                 font-size: 3rem;
-                
+
             }
 
             h1::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff7eaa, #ba68c8);
-            margin: 1px auto 0;
-            border-radius: 2px;
-        }
-            
+                content: "";
+                display: block;
+                width: 80px;
+                height: 3px;
+                background: linear-gradient(90deg, #ff7eaa, #ba68c8);
+                margin: 1px auto 0;
+                border-radius: 2px;
+            }
+
             .tagline {
                 font-size: 1.2rem;
             }
-            
+
             .app-buttons {
                 flex-direction: column;
             }
-            
+
             body::before {
                 width: 100%;
                 height: 40%;
                 top: 15%;
             }
-            
+
             body::after {
                 width: 100%;
                 height: 40%;
                 bottom: 15%;
             }
-
-            .form-container {
-                max-width: 100%;
-                padding: 0 10px;
-            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BKWZZZLHN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BKWZZZLHN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-2BKWZZZLHN');
-</script>
+        gtag('config', 'G-2BKWZZZLHN');
+    </script>
+</head>
+
 <body>
     <div class="container">
         <header>
@@ -320,81 +226,41 @@
             <h1>LifeMaxx</h1>
             <p class="tagline">#1 Life Optimization Assistant</p>
         </header>
-        
-        <div class="form-container">
-            <form id="email-form" class="form">
-                <input type="hidden" name="access_key" value="c534975c-b83f-4196-b402-99a6d8864138">
-                <input type="hidden" name="subject" value="New LifeMaxx Waitlist Signup">
-                <input type="hidden" name="from_name" value="LifeMaxx Website">
-              
-                <div class="form-group">
-                  <label for="email" class="form-label">Join our waitlist</label>
-                  <input 
-                      type="email" 
-                      name="email" 
-                      id="email" 
-                      class="form-input" 
-                      placeholder="Enter your email address"
-                      required
-                  >
-                  <div class="form-error">Please enter a valid email address</div>
-                </div>
-              
-                <button type="submit" class="form-submit">
-                  <span>Get Early Access</span>
-                  <i class="fas fa-arrow-right"></i>
-                </button>
-              </form>
-              
-              <div id="success-message" class="form-success" style="display: none;">
-                Thank you! We'll notify you when LifeMaxx is available.
-              </div>
-            
-            
-        
+        <div class="app-buttons">
+            <a href="https://apps.apple.com/us/app/lifemaxx-level-up-life/id6745310219" target="_blank"
+                class="app-button">
+                <img src="download-on-app-store.webp" alt="Download on the App Store">
+            </a>
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-links">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUWDUHCHQRo98OE_fa0EQP0ea5xPYm5A_kwV9w_Rksa1CC4A/viewform?usp=header" target="_blank">Support</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUWDUHCHQRo98OE_fa0EQP0ea5xPYm5A_kwV9w_Rksa1CC4A/viewform?usp=header"
+                target="_blank">Support</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Terms</a>
             <a href="https://sites.google.com/view/lifemaxxprivacypolicy/home" target="_blank">Privacy</a>
         </div>
         <div class="social-links">
-            <a href="https://x.com/Lifemaxx_app" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/lifemaxx.app/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@lifemaxapp" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/Lifemaxx_app" target="_blank" aria-label="Follow LifeMaxx on Twitter"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/lifemaxx.app/" target="_blank"
+                aria-label="Follow LifeMaxx on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@lifemaxapp" target="_blank" aria-label="Follow LifeMaxx on TikTok"><i
+                    class="fab fa-tiktok"></i></a>
         </div>
     </footer>
     <script>
-        document.getElementById('email-form').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          const form = e.target;
-          const formData = new FormData(form);
-          const successMessage = document.getElementById('success-message');
-        
-          const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-          });
-        
-          if (res.ok) {
-            form.style.display = 'none';
-            successMessage.style.display = 'block';
-        
-            // Optional: analytics
+        // Optional: analytics for app store button clicks
+        document.querySelector('.app-button').addEventListener('click', function () {
             if (typeof gtag === 'function') {
-              gtag('event', 'signup', {
-                event_category: 'engagement',
-                event_label: 'waitlist'
-              });
+                gtag('event', 'app_store_click', {
+                    event_category: 'engagement',
+                    event_label: 'download'
+                });
             }
-          } else {
-            alert("Something went wrong. Please try again.");
-          }
         });
-        </script>
+    </script>
 </body>
+
 </html>
